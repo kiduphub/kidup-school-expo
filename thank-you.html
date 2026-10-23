@@ -20,7 +20,18 @@
     .back-button:focus-visible { outline:3px solid var(--navy); outline-offset:4px; }
     @media(max-width:500px){ .confirmation{padding:45px 8px 64px;}.brand{margin-bottom:28px}.intro{margin-bottom:18px}.details{margin-bottom:30px}.back-button{width:100%;max-width:290px;} }
   </style>
-</head>
+<style>.kidup-consent-banner[hidden] {display:none!important}
+.kidup-consent-banner{position:fixed;bottom:18px;left:18px;right:18px;max-width:850px;margin:0 auto;z-index:2000;
+ background:white;color:#172344;border:1px solid #d6deea;box-shadow:0 10px 35px #14244630;padding:20px;
+ border-radius:18px;display:flex;gap:18px;align-items:center;justify-content:space-between;font-family:inherit;}
+.kidup-consent-copy{flex:1;font-size:14px;line-height:1.55}
+.kidup-consent-copy p{margin:5px 0 0}
+.kidup-consent-actions{display:flex;gap:8px;flex-shrink:0}
+.kidup-consent-actions button{cursor:pointer;border-radius:25px;padding:12px 18px;font:700 14px inherit;background:#172344;color:white;border:1px solid #172344}
+.kidup-consent-actions .secondary{background:white;color:#172344}
+.kidup-privacy-link{color:#1a628d;text-decoration:underline}
+@media(max-width:650px){.kidup-consent-banner{flex-direction:column;align-items:stretch;bottom:10px;left:10px;right:10px;padding:16px}.kidup-consent-actions button{flex:1}}
+</style></head>
 <body>
   <main class="confirmation">
     <img class="brand" src="assets/kidup-logo-reference.jpg" alt="KidUp Hub logo">
@@ -29,5 +40,9 @@
     <p class="details">Friday, 6 November 2026 · 6:00 PM<br>City Play, Zahraa El-Maadi</p>
     <a class="back-button" href="/kidup-school-expo/">Back to event page</a>
   </main>
-</body>
+<script src="pixel.js"></script><div id="kidup-tracking-consent" class="kidup-consent-banner" role="dialog" aria-label="Optional advertising analytics" hidden>
+  <div class="kidup-consent-copy"><strong>Help us improve event information</strong>
+    <p>With your permission, we use Meta Pixel to measure page visits and successful registrations for our advertising. You can decline without affecting your registration. <a class="kidup-privacy-link" href="privacy-policy.html">Privacy information</a>.</p>
+  </div><div class="kidup-consent-actions"><button type="button" class="secondary" data-consent-reject>Decline</button><button type="button" data-consent-accept>Accept</button></div>
+</div></body>
 </html>
