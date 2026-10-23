@@ -1,58 +1,72 @@
 (() => {
-  const form=document.getElementById('registration-form');
-  const phone=document.getElementById('phone');
-  const iframe=document.getElementById('sheet-submit-target');
-  const msg=document.getElementById('submit-message');
-  const btn=form.querySelector('button[type=submit]');
-  const originalBtn=btn.innerHTML;
-  let pending=false;
-  let timeoutId;
-  const params=new URLSearchParams(location.search);
-  ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k=>{
-    document.getElementById(k).value=params.get(k)||'';
+  const form = document.getElementById('registration-form');
+  const phone = document.getElementById('phone');
+  const msg = document.getElementById('submit-message');
+  const btn = form.querySelector('button[type=submit]');
+  const originalBtn = btn.innerHTML;
+  let pending = false;
+  const params = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k => {
+    document.getElementById(k).value = params.get(k) || '';
   });
-  function notify(message,error=false){msg.textContent=message;msg.style.display='block';msg.style.color=error?'#A43F38':'#186845';}
+  const notify = (message, error=true) => {
+    msg.textContent=message; msg.style.display='block';
+    msg.style.color=error?'#A43F38':'#186845';
+  };
+  const sleep = ms => new Promise(resolve => setTimeout(resolve,ms));
+  function checkReceipt(id, attempt) {
+    return new Promise(resolve => {
+      const callback='kidupReceipt_'+Math.random().toString(36).slice(2,13);
+      const script=document.createElement('script');
+      let finished=false;
+      function finish(ok){
+        if(finished)return;
+        finished=true;
+        clearTimeout(timeout);
+        delete window[callback];
+        script.remove();
+        resolve(ok);
+      }
+      window[callback]=data=>finish(!!(data && data.registration_id===id && data.saved));
+      script.onerror=()=>finish(false);
+      const sep=window.KIDUP_SCRIPT_URL.includes('?')?'&':'?';
+      script.src=window.KIDUP_SCRIPT_URL+sep+'registration_id='+encodeURIComponent(id)+'&callback='+callback+'&v='+attempt;
+      const timeout=setTimeout(()=>finish(false),5000);
+      document.head.appendChild(script);
+    });
+  }
   phone.addEventListener('input',()=>phone.setCustomValidity(''));
-  function stop(){pending=false;btn.disabled=false;btn.innerHTML=originalBtn;clearTimeout(timeoutId);}
-  // Response from the Apps Script HTML response is explicitly verified against
-  // the currently pending iframe window and the unique submission ID.
-  window.addEventListener('message', event=>{
-    // Apps Script HTML responses may originate from a unique subdomain of googleusercontent.com.
-    // Also require the exact submission iframe and per-submission registration ID.
-    let trustedGoogleOrigin = false;
-    try {
-      const u = new URL(event.origin);
-      trustedGoogleOrigin = u.protocol === 'https:' && (
-        u.hostname === 'script.google.com' ||
-        u.hostname === 'script.googleusercontent.com' ||
-        u.hostname.endsWith('.googleusercontent.com')
-      );
-    } catch (_) {}
-    if (!pending || event.source !== iframe.contentWindow || !trustedGoogleOrigin) return;
-    const data=event.data;
-    if(!data || data.type!=='KIDUP_REGISTRATION_RESULT'||data.registration_id!==document.getElementById('registration_id').value)return;
-    stop();
-    if(data.success){
-      sessionStorage.setItem('kidup_registration_success','yes');
-      window.location.assign('thank-you.html');
-    } else notify(data.error || 'Registration was not completed. Please try again.',true);
-  });
-  form.addEventListener('submit',event=>{
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if(pending)return;
     const normalized=phone.value.replace(/[\s()+-]/g,'');
     if(!/^(?:01[0125]\d{8}|201[0125]\d{8})$/.test(normalized)){
-      event.preventDefault();phone.setCustomValidity('Please enter a valid Egyptian mobile number (e.g. 01012345678).');phone.reportValidity();return;
+      phone.setCustomValidity('Please enter a valid Egyptian mobile number.');
+      phone.reportValidity();return;
     }
     phone.value=normalized;
     const url=window.KIDUP_SCRIPT_URL;
-    if(!url||!/^https:\/\/script\.google\.com\/macros\/s\//.test(url)){
-      event.preventDefault();notify('The registration form is not connected yet. Please configure the Google Apps Script URL.',true);return;
+    if(!url || !/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec(?:\?|$)/.test(url)){
+      notify('Registration is not connected yet.');return;
     }
-    if(pending){event.preventDefault();return;}
-    document.getElementById('registration_id').value='KD'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
+    pending=true;btn.disabled=true;btn.textContent='Confirming registration…';msg.style.display='none';
+    const id='KD'+Date.now()+'-'+Math.random().toString(36).slice(2,10);
+    document.getElementById('registration_id').value=id;
+    // Send to the hidden iframe with a native form POST; do not read the cross-origin response.
     form.action=url;
-    btn.disabled=true;btn.textContent='Submitting…';msg.style.display='none';pending=true;
-    timeoutId=setTimeout(()=>{
-      if(pending){stop();notify('We could not confirm registration. Please contact the organizers before submitting again.',true);}
-    },20000);
+    HTMLFormElement.prototype.submit.call(form);
+    await sleep(1800);
+    let success=false;
+    for(let i=0;i<9;i++){
+      if(await checkReceipt(id,i)){success=true;break;}
+      if(i<8)await sleep(1200);
+    }
+    pending=false;btn.disabled=false;btn.innerHTML=originalBtn;
+    if(success){
+      sessionStorage.setItem('kidup_registration_success','yes');
+      window.location.assign('thank-you.html');
+    }else{
+      notify('We could not verify this registration yet. Please check with the organizers before submitting again to avoid duplicates.');
+    }
   });
 })();
