@@ -17,7 +17,18 @@
   // Response from the Apps Script HTML response is explicitly verified against
   // the currently pending iframe window and the unique submission ID.
   window.addEventListener('message', event=>{
-    if(!pending || event.source !== iframe.contentWindow || !/^https:\/\/(?:script\.googleusercontent\.com|script\.google\.com)$/.test(event.origin)) return;
+    // Apps Script HTML responses may originate from a unique subdomain of googleusercontent.com.
+    // Also require the exact submission iframe and per-submission registration ID.
+    let trustedGoogleOrigin = false;
+    try {
+      const u = new URL(event.origin);
+      trustedGoogleOrigin = u.protocol === 'https:' && (
+        u.hostname === 'script.google.com' ||
+        u.hostname === 'script.googleusercontent.com' ||
+        u.hostname.endsWith('.googleusercontent.com')
+      );
+    } catch (_) {}
+    if (!pending || event.source !== iframe.contentWindow || !trustedGoogleOrigin) return;
     const data=event.data;
     if(!data || data.type!=='KIDUP_REGISTRATION_RESULT'||data.registration_id!==document.getElementById('registration_id').value)return;
     stop();
