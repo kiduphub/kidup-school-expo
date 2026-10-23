@@ -64,6 +64,9 @@
     pending=false;btn.disabled=false;btn.innerHTML=originalBtn;
     if(success){
       sessionStorage.setItem('kidup_registration_success','yes');
+      // Only a verified receipt can trigger Lead. Never send name, email or phone.
+      const tracked = window.KidUpTracking?.lead() || false;
+      if (tracked) await sleep(450);
       window.location.assign('thank-you.html');
     }else{
       notify('We could not verify this registration yet. Please check with the organizers before submitting again to avoid duplicates.');
