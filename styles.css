@@ -13,3 +13,49 @@
 @media(max-width:390px){.school-tile{min-height:150px}.school-tile img{height:85px}}
 
 .more-schools{text-align:center;margin:28px auto 0;color:#172344;font-size:17px;font-weight:800;letter-spacing:.2px}.more-schools:before{content:"✦";color:#ffc42c;margin-right:10px}.more-schools:after{content:"✦";color:#61b6ed;margin-left:10px}@media(max-width:610px){.more-schools{font-size:14px;margin-top:20px}}
+
+/* KidUp mobile sponsor section – prevents fixed-height sponsor card overflow */
+.sponsors-band { position: relative; }
+.sponsor-grid--single { display: flex; justify-content: center; align-items: stretch; }
+.sponsor-grid--single .sponsor-tile {
+  box-sizing: border-box;
+  width: min(100%, 400px);
+  height: auto;
+  min-height: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+}
+.sponsor-grid--single .sponsor-tile img {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.sponsor-grid--single .sponsor-tile p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.45;
+}
+.school-section { clear: both; }
+@media (max-width: 610px) {
+  .sponsors-band { padding: 36px 0 42px; }
+  .sponsor-grid--single { width: 100%; }
+  .sponsor-grid--single .sponsor-tile {
+    width: min(100%, 360px);
+    height: auto;
+    padding: 18px;
+    border-radius: 18px;
+  }
+  .sponsor-grid--single .sponsor-tile img { max-width: 100%; }
+  .sponsor-grid--single .sponsor-tile p { font-size: 12px; }
+  .school-section { padding-top: 44px; }
+}
