@@ -2,18 +2,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#172344">
-<meta name="description" content="Join KidUp Hub School Expo 2026. Meet participating schools, discover talks and workshops, and register for free. Limited spots available.">
-<title>School Expo 2026 | KidUp Hub — Free Registration</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261023-sponsor-fix">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172344">
+  <meta name="description" content="Join KidUp Hub School Expo 2026. Meet participating schools, discover talks and workshops, and register for free. Limited spots available.">
+  <title>School Expo 2026 | KidUp Hub — Free Registration</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261030-sponsors-v2">
+
+  <style>
+    /* Sponsor section only - does not alter registration form */
+
+    .sponsors-band {
+      padding-top: 55px !important;
+      padding-bottom: 65px !important;
+    }
+
+    .sponsors-band .section-head {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sponsors-band .sponsor-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      max-width: 740px !important;
+      margin: 0 auto !important;
+      align-items: stretch !important;
+    }
+
+    .sponsors-band .sponsor-tile {
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 14px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      height: auto !important;
+      min-height: 285px !important;
+      margin: 0 !important;
+      padding: 24px 20px !important;
+      overflow: hidden !important;
+      background: #ffffff !important;
+      border: 1px solid #e7eaf0 !important;
+      border-radius: 20px !important;
+      box-shadow: 0 5px 20px rgba(23,35,68,.045) !important;
+      text-align: center !important;
+    }
+
+    .sponsors-band .sponsor-logo-wrap {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 180px;
+      min-height: 180px;
+      padding: 5px;
+      overflow: hidden;
+      background: #ffffff;
+      border-radius: 12px;
+    }
+
+    .sponsors-band .sponsor-logo-wrap img {
+      display: block !important;
+      position: static !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100% !important;
+      max-height: 170px !important;
+      min-width: 0 !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
+    .sponsors-band .sponsor-tile p {
+      position: static !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #172344 !important;
+      font-family: 'Nunito Sans', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+      overflow-wrap: break-word;
+    }
+
+    .sponsors-band + .school-section {
+      margin-top: 0 !important;
+      padding-top: 55px !important;
+      clear: both;
+    }
+
+    @media (max-width: 600px) {
+      .sponsors-band {
+        padding-top: 40px !important;
+        padding-bottom: 45px !important;
+      }
+
+      .sponsors-band .sponsor-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+        max-width: 340px !important;
+      }
+
+      .sponsors-band .sponsor-tile {
+        min-height: 245px !important;
+        padding: 18px !important;
+      }
+
+      .sponsors-band .sponsor-logo-wrap {
+        height: 165px;
+        min-height: 165px;
+      }
+
+      .sponsors-band .sponsor-logo-wrap img {
+        max-height: 155px !important;
+      }
+
+      .sponsors-band + .school-section {
+        padding-top: 40px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
 <header class="top">
   <div class="shell top-inner">
     <a href="#top" class="brand" aria-label="KidUp Hub homepage">
@@ -24,266 +153,427 @@
 </header>
 
 <main id="top">
-<section class="hero shell">
-  <div class="hero-copy">
-    <div class="eyebrow">KIDUP HUB PRESENTS</div>
-    <h1><span>SCHOOL</span><strong>EXPO</strong></h1>
-    <p class="year">ADMISSIONS FOR 2027</p>
-    <p class="lead">Meet leading schools, explore educational opportunities, and find the right fit for your child.</p>
 
-    <div class="event-meta">
-      <div class="meta">
-        <span class="meta-icon">▦</span>
-        <div>
-          <b>Friday, 6 November 2026</b>
-          <small>6:00 PM</small>
-        </div>
-      </div>
-      <div class="meta">
-        <span class="meta-icon sky">⌖</span>
-        <div>
-          <b>City Play</b>
-          <small>Zahraa El-Maadi, Cairo</small>
-        </div>
-      </div>
-    </div>
+  <!-- HERO & REGISTRATION FORM -->
+  <section class="hero shell">
+    <div class="hero-copy">
+      <div class="eyebrow">KIDUP HUB PRESENTS</div>
 
-    <div class="highlights">
-      <div><span>✓</span> Free Entry</div>
-      <div><span>✓</span> Limited Spots</div>
-      <div><span>✓</span> Exclusive School Offers</div>
-    </div>
+      <h1>
+        <span>SCHOOL</span>
+        <strong>EXPO</strong>
+      </h1>
 
-    <div class="hero-photo">
-      <img src="assets/parent-child.jpg" alt="Parent and child discussing school choices">
-      <div class="photo-caption">Your child's next chapter starts here.</div>
-    </div>
-  </div>
+      <p class="year">ADMISSIONS FOR 2027</p>
 
-  <aside class="form-card" id="register">
-    <div class="form-accent"></div>
-    <p class="form-eyebrow">FREE EVENT REGISTRATION</p>
-    <h2>Save Your Spot</h2>
-    <p class="form-description">Register for the KidUp Hub School Expo. Limited spaces available.</p>
-
-    <form name="school-expo-registration" method="POST" action="" target="sheet-submit-target" id="registration-form">
-      <input type="hidden" name="source" value="website">
-      <input type="hidden" name="utm_source" id="utm_source">
-      <input type="hidden" name="utm_medium" id="utm_medium">
-      <input type="hidden" name="utm_campaign" id="utm_campaign">
-      <input type="hidden" name="utm_content" id="utm_content">
-      <input type="hidden" name="registration_id" id="registration_id">
-
-      <p class="hidden-field">
-        <label>Don't fill this out: <input name="bot-field"></label>
+      <p class="lead">
+        Meet leading schools, explore educational opportunities,
+        and find the right fit for your child.
       </p>
 
-      <div class="field">
-        <label for="parent">Parent's Full Name <em>*</em></label>
-        <input id="parent" name="parent_name" autocomplete="name" placeholder="Enter your full name" maxlength="100" required>
-      </div>
-
-      <div class="field">
-        <label for="phone">Mobile Number <em>*</em></label>
-        <input id="phone" name="mobile_number" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 01012345678" minlength="10" maxlength="20" required>
-      </div>
-
-      <div class="field">
-        <label for="email">Email Address <em>*</em></label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="150" required>
-      </div>
-
-      <div class="form-pair">
-        <div class="field">
-          <label for="attendees">Number of Attendees <em>*</em></label>
-          <select id="attendees" name="attendees" required>
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5+">5+</option>
-          </select>
+      <div class="event-meta">
+        <div class="meta">
+          <span class="meta-icon">▦</span>
+          <div>
+            <b>Friday, 6 November 2026</b>
+            <small>6:00 PM</small>
+          </div>
         </div>
 
-        <div class="field">
-          <label for="age">Child's Age Range <em>*</em></label>
-          <select id="age" name="child_age" required>
-            <option value="">Select</option>
-            <option>Under 2</option>
-            <option>2–3</option>
-            <option>4–5</option>
-            <option>6–8</option>
-            <option>9+</option>
-          </select>
+        <div class="meta">
+          <span class="meta-icon sky">⌖</span>
+          <div>
+            <b>City Play</b>
+            <small>Zahraa El-Maadi, Cairo</small>
+          </div>
         </div>
       </div>
 
-      <div class="field">
-        <label for="school">Current Nursery / School</label>
-        <input id="school" name="current_school" maxlength="120" placeholder="Name of current school (if any)">
+      <div class="highlights">
+        <div><span>✓</span> Free Entry</div>
+        <div><span>✓</span> Limited Spots</div>
+        <div><span>✓</span> Exclusive School Offers</div>
       </div>
 
-      <div class="field">
-        <label for="interest">What are you looking for? <span>(optional)</span></label>
-        <textarea id="interest" name="interests" rows="2" maxlength="600" placeholder="e.g. schools, curriculum, admission offers"></textarea>
+      <div class="hero-photo">
+        <img src="assets/parent-child.jpg"
+             alt="Parent and child discussing school choices">
+        <div class="photo-caption">
+          Your child's next chapter starts here.
+        </div>
       </div>
+    </div>
 
-      <label class="consent">
-        <input type="checkbox" name="privacy_consent" value="yes" required>
-        <span>
-          I agree to be contacted about this event using the information provided.
-          <a class="kidup-privacy-link" href="privacy-policy.html" target="_blank" rel="noopener">Privacy information</a>.
-          <em>*</em>
-        </span>
-      </label>
+    <aside class="form-card" id="register">
+      <div class="form-accent"></div>
 
-      <button class="primary" type="submit">Save My Spot <span>→</span></button>
-      <p class="fine">Free entry · Limited capacity · Your details are used for event registration and communication.</p>
-    </form>
+      <p class="form-eyebrow">FREE EVENT REGISTRATION</p>
+      <h2>Save Your Spot</h2>
+      <p class="form-description">
+        Register for the KidUp Hub School Expo.
+        Limited spaces available.
+      </p>
 
-    <iframe name="sheet-submit-target" id="sheet-submit-target" title="Form submission" style="display:none"></iframe>
-    <p id="submit-message" role="status" aria-live="polite" style="display:none; margin-top:12px; font-weight:700;"></p>
-  </aside>
-</section>
+      <form
+        name="school-expo-registration"
+        method="POST"
+        action=""
+        target="sheet-submit-target"
+        id="registration-form"
+      >
+        <input type="hidden" name="source" value="website">
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="registration_id" id="registration_id">
 
-<section class="features section shell">
-  <div class="section-head">
-    <p class="eyebrow">PLAN YOUR VISIT</p>
-    <h2>What to Expect</h2>
-    <p>Everything parents need to explore their child's educational journey.</p>
-  </div>
+        <p class="hidden-field">
+          <label>
+            Don't fill this out:
+            <input name="bot-field">
+          </label>
+        </p>
 
-  <div class="feature-grid">
-    <article class="feature">
-      <div class="feature-ic green">♧</div>
-      <h3>Expert Talks</h3>
-      <p>Insights from education specialists and school leaders.</p>
-    </article>
+        <div class="field">
+          <label for="parent">
+            Parent's Full Name <em>*</em>
+          </label>
+          <input
+            id="parent"
+            name="parent_name"
+            autocomplete="name"
+            placeholder="Enter your full name"
+            maxlength="100"
+            required
+          >
+        </div>
 
-    <article class="feature">
-      <div class="feature-ic blue">✦</div>
-      <h3>Interactive Workshops</h3>
-      <p>Practical, engaging sessions designed for parents.</p>
-    </article>
+        <div class="field">
+          <label for="phone">
+            Mobile Number <em>*</em>
+          </label>
+          <input
+            id="phone"
+            name="mobile_number"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="e.g. 01012345678"
+            minlength="10"
+            maxlength="20"
+            required
+          >
+        </div>
 
-    <article class="feature">
-      <div class="feature-ic gold">⌂</div>
-      <h3>Meet Schools</h3>
-      <p>Compare your options and speak directly with school teams.</p>
-    </article>
+        <div class="field">
+          <label for="email">
+            Email Address <em>*</em>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            maxlength="150"
+            required
+          >
+        </div>
 
-    <article class="feature">
-      <div class="feature-ic lilac">%</div>
-      <h3>Exclusive Offers</h3>
-      <p>Discover special admission opportunities for attendees.</p>
-    </article>
-  </div>
-</section>
+        <div class="form-pair">
+          <div class="field">
+            <label for="attendees">
+              Number of Attendees <em>*</em>
+            </label>
+            <select id="attendees" name="attendees" required>
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </div>
 
-<section class="section organizer-band">
-  <div class="shell">
+          <div class="field">
+            <label for="age">
+              Child's Age Range <em>*</em>
+            </label>
+            <select id="age" name="child_age" required>
+              <option value="">Select</option>
+              <option>Under 2</option>
+              <option>2–3</option>
+              <option>4–5</option>
+              <option>6–8</option>
+              <option>9+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="school">
+            Current Nursery / School
+          </label>
+          <input
+            id="school"
+            name="current_school"
+            maxlength="120"
+            placeholder="Name of current school (if any)"
+          >
+        </div>
+
+        <div class="field">
+          <label for="interest">
+            What are you looking for?
+            <span>(optional)</span>
+          </label>
+          <textarea
+            id="interest"
+            name="interests"
+            rows="2"
+            maxlength="600"
+            placeholder="e.g. schools, curriculum, admission offers"
+          ></textarea>
+        </div>
+
+        <label class="consent">
+          <input
+            type="checkbox"
+            name="privacy_consent"
+            value="yes"
+            required
+          >
+          <span>
+            I agree to be contacted about this event using
+            the information provided.
+            <a
+              class="kidup-privacy-link"
+              href="privacy-policy.html"
+              target="_blank"
+              rel="noopener"
+            >Privacy information</a>.
+            <em>*</em>
+          </span>
+        </label>
+
+        <button class="primary" type="submit">
+          Save My Spot <span>→</span>
+        </button>
+
+        <p class="fine">
+          Free entry · Limited capacity · Your details
+          are used for event registration and communication.
+        </p>
+      </form>
+
+      <iframe
+        name="sheet-submit-target"
+        id="sheet-submit-target"
+        title="Form submission"
+        style="display:none"
+      ></iframe>
+
+      <p
+        id="submit-message"
+        role="status"
+        aria-live="polite"
+        style="display:none; margin-top:12px; font-weight:700;"
+      ></p>
+    </aside>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="features section shell">
     <div class="section-head">
-      <p class="eyebrow">THE TEAM BEHIND THE EVENT</p>
-      <h2>Organized By</h2>
+      <p class="eyebrow">PLAN YOUR VISIT</p>
+      <h2>What to Expect</h2>
+      <p>
+        Everything parents need to explore
+        their child's educational journey.
+      </p>
     </div>
 
-    <div class="organizer-grid">
-      <div class="logo-tile">
-        <img src="assets/organizer-1.png" alt="Yippee Child Development Center">
+    <div class="feature-grid">
+      <article class="feature">
+        <div class="feature-ic green">♧</div>
+        <h3>Expert Talks</h3>
+        <p>Insights from education specialists and school leaders.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-ic blue">✦</div>
+        <h3>Interactive Workshops</h3>
+        <p>Practical, engaging sessions designed for parents.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-ic gold">⌂</div>
+        <h3>Meet Schools</h3>
+        <p>Compare your options and speak directly with school teams.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-ic lilac">%</div>
+        <h3>Exclusive Offers</h3>
+        <p>Discover special admission opportunities for attendees.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ORGANIZERS -->
+  <section class="section organizer-band">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">THE TEAM BEHIND THE EVENT</p>
+        <h2>Organized By</h2>
       </div>
-      <div class="logo-tile">
-        <img src="assets/organizer-2.png" alt="Rainbow Nursery">
-      </div>
-      <div class="logo-tile">
-        <img src="assets/organizer-3.png" alt="Kiddo Nursery">
+
+      <div class="organizer-grid">
+        <div class="logo-tile">
+          <img src="assets/organizer-1.png"
+               alt="Yippee Child Development Center">
+        </div>
+
+        <div class="logo-tile">
+          <img src="assets/organizer-2.png"
+               alt="Rainbow Nursery">
+        </div>
+
+        <div class="logo-tile">
+          <img src="assets/organizer-3.png"
+               alt="Kiddo Nursery">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SPONSORS: Cleopatra + ABA Care -->
-<section class="section sponsors-band">
-  <div class="shell">
+  <!-- SPONSORS -->
+  <section class="section sponsors-band">
+    <div class="shell">
+
+      <div class="section-head">
+        <p class="eyebrow">OUR EVENT SUPPORTERS</p>
+        <h2>Sponsors</h2>
+      </div>
+
+      <div class="sponsor-grid">
+
+        <!-- Cleopatra -->
+        <div class="logo-tile sponsor-tile">
+          <div class="sponsor-logo-wrap">
+            <img
+              src="assets/chg.jpg"
+              alt="Cleopatra Hospitals Group — Maadi"
+              loading="lazy"
+            >
+          </div>
+          <p>Cleopatra Hospitals Group – Maadi</p>
+        </div>
+
+        <!-- ABA Care -->
+        <div class="logo-tile sponsor-tile">
+          <div class="sponsor-logo-wrap">
+            <img
+              src="assets/aba-care-pharmaceuticals.webp"
+              alt="ABA Care Pharmaceuticals"
+              loading="lazy"
+            >
+          </div>
+          <p>ABA Care Pharmaceuticals</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPATING SCHOOLS -->
+  <section class="section school-section shell">
     <div class="section-head">
-      <p class="eyebrow">OUR EVENT SUPPORTERS</p>
-      <h2>Sponsors</h2>
+      <p class="eyebrow">EXPLORE YOUR OPTIONS</p>
+      <h2>Participating Schools</h2>
+      <p>Discover our confirmed participating schools.</p>
     </div>
 
-    <div class="sponsor-grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:650px;margin:0 auto;">
-      <div class="logo-tile sponsor-tile">
-        <img src="assets/chg.jpg" alt="CHG — Cleopatra Hospitals Group, Maadi" loading="lazy">
-        <p>Cleopatra Hospitals Group – Maadi</p>
+    <div class="school-grid" id="schools">
+
+      <div class="school-tile">
+        <img src="assets/citadel.jpg"
+             alt="Citadel International School logo"
+             loading="lazy">
+        <span>Citadel International School</span>
       </div>
 
-      <div class="logo-tile sponsor-tile">
-        <img src="assets/aba-care-pharmaceuticals.webp" alt="ABA Care Pharmaceuticals" loading="lazy">
-        <p>ABA Care Pharmaceuticals</p>
+      <div class="school-tile">
+        <img src="assets/nnic.jpg"
+             alt="NNIC logo"
+             loading="lazy">
+        <span>NNIC</span>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="section school-section shell">
-  <div class="section-head">
-    <p class="eyebrow">EXPLORE YOUR OPTIONS</p>
-    <h2>Participating Schools</h2>
-    <p>Discover our confirmed participating schools.</p>
-  </div>
+      <div class="school-tile">
+        <img src="assets/uptown.jpg"
+             alt="Uptown International School logo"
+             loading="lazy">
+        <span>Uptown International School</span>
+      </div>
 
-  <div class="school-grid" id="schools">
-    <div class="school-tile">
-      <img src="assets/citadel.jpg" alt="Citadel International School logo" loading="lazy">
-      <span>Citadel International School</span>
-    </div>
+      <div class="school-tile">
+        <img src="assets/mastery-international-schools.webp"
+             alt="Mastery International Schools logo"
+             loading="lazy">
+        <span>Mastery International Schools</span>
+      </div>
 
-    <div class="school-tile">
-      <img src="assets/nnic.jpg" alt="NNIC logo" loading="lazy">
-      <span>NNIC</span>
-    </div>
+      <div class="school-tile">
+        <img src="assets/ivy.jpg"
+             alt="IVY logo"
+             loading="lazy">
+        <span>IVY</span>
+      </div>
 
-    <div class="school-tile">
-      <img src="assets/uptown.jpg" alt="Uptown International School logo" loading="lazy">
-      <span>Uptown International School</span>
-    </div>
+      <div class="school-tile">
+        <img src="assets/manhattan.jpg"
+             alt="Manhattan Elite logo"
+             loading="lazy">
+        <span>Manhattan Elite</span>
+      </div>
 
-    <div class="school-tile">
-      <img src="assets/mastery-international-schools.webp" alt="Mastery International Schools logo" loading="lazy">
-      <span>Mastery International Schools</span>
-    </div>
+      <div class="school-tile">
+        <img src="assets/palm.jpg"
+             alt="Palm International School logo"
+             loading="lazy">
+        <span>Palm International School</span>
+      </div>
 
-    <div class="school-tile">
-      <img src="assets/ivy.jpg" alt="IVY logo" loading="lazy">
-      <span>IVY</span>
-    </div>
+      <div class="school-tile">
+        <img src="assets/elite.jpg"
+             alt="Elite Generation International School logo"
+             loading="lazy">
+        <span>Elite Generation International School</span>
+      </div>
 
-    <div class="school-tile">
-      <img src="assets/manhattan.jpg" alt="Manhattan Elite logo" loading="lazy">
-      <span>Manhattan Elite</span>
-    </div>
-
-    <div class="school-tile">
-      <img src="assets/palm.jpg" alt="Palm International School logo" loading="lazy">
-      <span>Palm International School</span>
     </div>
 
-    <div class="school-tile">
-      <img src="assets/elite.jpg" alt="Elite Generation International School logo" loading="lazy">
-      <span>Elite Generation International School</span>
+    <p class="more-schools">And more schools to be announced</p>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing shell">
+    <div>
+      <p class="eyebrow">YOUR CHILD'S NEXT CHAPTER</p>
+      <h2>A brighter tomorrow begins here.</h2>
+      <p>
+        Join us for an evening of conversations,
+        discoveries and opportunities.
+      </p>
     </div>
-  </div>
 
-  <p class="more-schools">And more schools to be announced</p>
-</section>
+    <a class="closing-btn" href="#register">
+      Register for Free <span>↗</span>
+    </a>
+  </section>
 
-<section class="closing shell">
-  <div>
-    <p class="eyebrow">YOUR CHILD'S NEXT CHAPTER</p>
-    <h2>A brighter tomorrow begins here.</h2>
-    <p>Join us for an evening of conversations, discoveries and opportunities.</p>
-  </div>
-  <a class="closing-btn" href="#register">Register for Free <span>↗</span></a>
-</section>
 </main>
 
 <footer>
@@ -297,19 +587,39 @@
 <script src="config.js"></script>
 <script src="script.js"></script>
 
-<div id="kidup-tracking-consent" class="kidup-consent-banner" role="dialog" aria-label="Optional advertising analytics" hidden>
+<!-- META PIXEL CONSENT -->
+<div
+  id="kidup-tracking-consent"
+  class="kidup-consent-banner"
+  role="dialog"
+  aria-label="Optional advertising analytics"
+  hidden
+>
   <div class="kidup-consent-copy">
     <strong>Help us improve event information</strong>
+
     <p>
-      With your permission, we use Meta Pixel to measure page visits and successful registrations for our advertising.
+      With your permission, we use Meta Pixel to measure
+      page visits and successful registrations for our advertising.
       You can decline without affecting your registration.
-      <a class="kidup-privacy-link" href="privacy-policy.html">Privacy information</a>.
+      <a
+        class="kidup-privacy-link"
+        href="privacy-policy.html"
+      >Privacy information</a>.
     </p>
   </div>
 
   <div class="kidup-consent-actions">
-    <button type="button" class="secondary" data-consent-reject>Decline</button>
-    <button type="button" data-consent-accept>Accept</button>
+    <button
+      type="button"
+      class="secondary"
+      data-consent-reject
+    >Decline</button>
+
+    <button
+      type="button"
+      data-consent-accept
+    >Accept</button>
   </div>
 </div>
 
