@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#172344">
-  <meta name="description" content="Join KidUp Hub School Expo 2026. Meet participating schools, discover talks and workshops, and register for free. Limited spots available.">
-  <title>School Expo 2026 | KidUp Hub — Free Registration</title>
+  <meta name="description" content="Registration for KidUp Hub School Expo 2027 is now closed. The event takes place Friday, 6 November 2026 at 6 PM in City Play, Zahraa El-Maadi.">
+  <title>School Expo 2027 | Registration Closed — KidUp Hub</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +138,80 @@
         padding-top: 40px !important;
       }
     }
+
+    /* Registration-closed state: independent of existing form styles */
+    .registration-closed-card {
+      background: #fff;
+      border: 1px solid #e5eaf2;
+      border-radius: 22px;
+      box-shadow: 0 14px 44px rgba(23, 35, 68, .08);
+      padding: clamp(26px, 4vw, 46px) clamp(22px, 4vw, 38px);
+      text-align: center;
+      align-self: start;
+      color: #172344;
+    }
+    .registration-closed-card .closed-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      background: #edf7ef;
+      color: #278047;
+      font-size: 30px;
+      font-weight: 800;
+    }
+    .registration-closed-card .closed-eyebrow {
+      margin: 0 0 10px;
+      letter-spacing: .12em;
+      font-size: 12px;
+      font-weight: 900;
+      color: #576680;
+    }
+    .registration-closed-card h2 {
+      font-size: clamp(27px, 3vw, 35px);
+      line-height: 1.16;
+      margin: 0 0 13px;
+      color: #172344;
+    }
+    .registration-closed-card .closed-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 800;
+      margin: 0 0 17px;
+    }
+    .registration-closed-card .closed-copy {
+      color: #53617b;
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+    .registration-closed-card .registered-note {
+      background: #f2f7f6;
+      border-radius: 13px;
+      padding: 15px;
+      margin: 20px 0;
+      color: #214a43;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .registration-closed-card .closed-details {
+      border-top: 1px solid #e9edf3;
+      border-bottom: 1px solid #e9edf3;
+      padding: 18px 0;
+      margin: 20px 0;
+      display: grid;
+      gap: 9px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .registration-closed-card .closed-footer {
+      margin: 10px 0 0;
+      color: #172344;
+      font-weight: 900;
+      font-size: 17px;
+    }
   </style>
 </head>
 
@@ -154,7 +228,7 @@
 
 <main id="top">
 
-  <!-- HERO & REGISTRATION FORM -->
+  <!-- HERO & REGISTRATION-CLOSED MESSAGE -->
   <section class="hero shell">
     <div class="hero-copy">
       <div class="eyebrow">KIDUP HUB PRESENTS</div>
@@ -191,7 +265,7 @@
 
       <div class="highlights">
         <div><span>✓</span> Free Entry</div>
-        <div><span>✓</span> Limited Spots</div>
+        <div><span>✓</span> Registration Closed</div>
         <div><span>✓</span> Exclusive School Offers</div>
       </div>
 
@@ -204,182 +278,23 @@
       </div>
     </div>
 
-    <aside class="form-card" id="register">
-      <div class="form-accent"></div>
-
-      <p class="form-eyebrow">FREE EVENT REGISTRATION</p>
-      <h2>Save Your Spot</h2>
-      <p class="form-description">
-        Register for the KidUp Hub School Expo.
-        Limited spaces available.
-      </p>
-
-      <form
-        name="school-expo-registration"
-        method="POST"
-        action=""
-        target="sheet-submit-target"
-        id="registration-form"
-      >
-        <input type="hidden" name="source" value="website">
-        <input type="hidden" name="utm_source" id="utm_source">
-        <input type="hidden" name="utm_medium" id="utm_medium">
-        <input type="hidden" name="utm_campaign" id="utm_campaign">
-        <input type="hidden" name="utm_content" id="utm_content">
-        <input type="hidden" name="registration_id" id="registration_id">
-
-        <p class="hidden-field">
-          <label>
-            Don't fill this out:
-            <input name="bot-field">
-          </label>
-        </p>
-
-        <div class="field">
-          <label for="parent">
-            Parent's Full Name <em>*</em>
-          </label>
-          <input
-            id="parent"
-            name="parent_name"
-            autocomplete="name"
-            placeholder="Enter your full name"
-            maxlength="100"
-            required
-          >
-        </div>
-
-        <div class="field">
-          <label for="phone">
-            Mobile Number <em>*</em>
-          </label>
-          <input
-            id="phone"
-            name="mobile_number"
-            type="tel"
-            autocomplete="tel"
-            inputmode="tel"
-            placeholder="e.g. 01012345678"
-            minlength="10"
-            maxlength="20"
-            required
-          >
-        </div>
-
-        <div class="field">
-          <label for="email">
-            Email Address <em>*</em>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-            maxlength="150"
-            required
-          >
-        </div>
-
-        <div class="form-pair">
-          <div class="field">
-            <label for="attendees">
-              Number of Attendees <em>*</em>
-            </label>
-            <select id="attendees" name="attendees" required>
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5+">5+</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="age">
-              Child's Age Range <em>*</em>
-            </label>
-            <select id="age" name="child_age" required>
-              <option value="">Select</option>
-              <option>Under 2</option>
-              <option>2–3</option>
-              <option>4–5</option>
-              <option>6–8</option>
-              <option>9+</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="school">
-            Current Nursery / School
-          </label>
-          <input
-            id="school"
-            name="current_school"
-            maxlength="120"
-            placeholder="Name of current school (if any)"
-          >
-        </div>
-
-        <div class="field">
-          <label for="interest">
-            What are you looking for?
-            <span>(optional)</span>
-          </label>
-          <textarea
-            id="interest"
-            name="interests"
-            rows="2"
-            maxlength="600"
-            placeholder="e.g. schools, curriculum, admission offers"
-          ></textarea>
-        </div>
-
-        <label class="consent">
-          <input
-            type="checkbox"
-            name="privacy_consent"
-            value="yes"
-            required
-          >
-          <span>
-            I agree to be contacted about this event using
-            the information provided.
-            <a
-              class="kidup-privacy-link"
-              href="privacy-policy.html"
-              target="_blank"
-              rel="noopener"
-            >Privacy information</a>.
-            <em>*</em>
-          </span>
-        </label>
-
-        <button class="primary" type="submit">
-          Save My Spot <span>→</span>
-        </button>
-
-        <p class="fine">
-          Free entry · Limited capacity · Your details
-          are used for event registration and communication.
-        </p>
-      </form>
-
-      <iframe
-        name="sheet-submit-target"
-        id="sheet-submit-target"
-        title="Form submission"
-        style="display:none"
-      ></iframe>
-
-      <p
-        id="submit-message"
-        role="status"
-        aria-live="polite"
-        style="display:none; margin-top:12px; font-weight:700;"
-      ></p>
+    <aside class="registration-closed-card" id="register" aria-labelledby="closed-heading">
+      <div class="closed-mark" aria-hidden="true">✓</div>
+      <p class="closed-eyebrow">KIDUP HUB SCHOOL EXPO 2027</p>
+      <h2 id="closed-heading">Registration Is Now Closed!</h2>
+      <p class="closed-subtitle">Thank You for Your Interest! 💛</p>
+      <p class="closed-copy">Registration for this event has officially closed.</p>
+      <div class="registered-note">
+        <strong>Already registered?</strong><br>
+        Your registration remains valid, and no further action is needed.
+      </div>
+      <p class="closed-copy">We look forward to welcoming you and your family!</p>
+      <div class="closed-details">
+        <div><strong>Friday, 6 November 2026</strong></div>
+        <div><strong>6:00 PM</strong></div>
+        <div><strong>City Play</strong> · Zahraa El-Maadi, Cairo</div>
+      </div>
+      <p class="closed-footer">See You at the Expo! 🎓</p>
     </aside>
   </section>
 
@@ -569,9 +484,7 @@
       </p>
     </div>
 
-    <a class="closing-btn" href="#register">
-      Register for Free <span>↗</span>
-    </a>
+<p class="closing-btn" aria-label="Registration is closed">Registration Closed <span>✓</span></p>
   </section>
 
 </main>
@@ -585,7 +498,7 @@
 
 <script src="pixel.js"></script>
 <script src="config.js"></script>
-<script src="script.js"></script>
+<!-- Registration form removed; script.js is intentionally not loaded. -->
 
 <!-- META PIXEL CONSENT -->
 <div
@@ -600,8 +513,8 @@
 
     <p>
       With your permission, we use Meta Pixel to measure
-      page visits and successful registrations for our advertising.
-      You can decline without affecting your registration.
+      visits to this event information page for our advertising.
+      You can decline and still view the event information.
       <a
         class="kidup-privacy-link"
         href="privacy-policy.html"
